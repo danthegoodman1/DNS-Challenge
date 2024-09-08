@@ -40,7 +40,7 @@ do
 
     # DRY RUN: print HTTP response and Content-Length
     # WITHOUT downloading the files
-    curl -s -I "$URL" | head -n 2
+    # curl -s -I "$URL" | head -n 2
 
     # Actually download the files: UNCOMMENT when ready to download
     # curl "$URL" -o "$OUTPUT_PATH/$BLOB"
@@ -49,5 +49,5 @@ do
     # wget "$URL" -O "$OUTPUT_PATH/$BLOB"
 
     # Same, + unpack files on the fly
-    # curl "$URL" | tar -C "$OUTPUT_PATH" -f - -x -j
+    curl "$URL" | tar -C "$OUTPUT_PATH" -f - -x -j
 done

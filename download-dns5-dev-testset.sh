@@ -19,15 +19,15 @@ URL="https://dnschallengepublic.blob.core.windows.net/dns5archive/V5_dev_testset
 echo "Download: $URL"
 #
 # DRY RUN: print HTTP header WITHOUT downloading the files
-curl -s -I "$URL"
+# curl -s -I "$URL"
 #
 # Actually download the archive - UNCOMMENT it when ready to download
 #do
-wget "$URL"
+# wget "$URL"
 
 #done
 # curl "$URL" -o "$BLOB"
 # Same as above, but using wget
 #wget "$URL 
 # Same, + unpack files on the fly
-# curl "$URL" | tar -f - -x -j
+curl "$URL" | tar -f - -x -j
