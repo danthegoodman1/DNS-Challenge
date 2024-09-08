@@ -30,4 +30,4 @@ echo "Download: $URL"
 # Same as above, but using wget
 #wget "$URL 
 # Same, + unpack files on the fly
-curl "$URL" | tar -f - -x -j
+curl "$URL" | tar -f - -x -z
