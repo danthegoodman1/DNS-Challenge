@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+# A ton of these will fail because they are corrupt or missing
+
 # ***** 5th DNS Challenge at ICASSP 2023*****
 # Track 1 Headset Clean speech: All Languages 
 # -------------------------------------------------------------
@@ -111,7 +113,7 @@ AZURE_URL="https://dnschallengepublic.blob.core.windows.net/dns5archive/V5_train
 
 OUTPUT_PATH="./datasets_fullband"
 
-mkdir -p $OUTPUT_PATH/{clean_fullband}
+mkdir -p $OUTPUT_PATH/Track1_Headset
 
 for BLOB in ${BLOB_NAMES[@]}
 do
@@ -120,14 +122,14 @@ do
 
     # DRY RUN: print HTTP response and Content-Length
     # WITHOUT downloading the files
-    curl -s -I "$URL" | head -n 2
+    # curl -s -I "$URL" | head -n 2
 
     # Actually download the files: UNCOMMENT when ready to download
-    # curl "$URL" -o "$OUTPUT_PATH/$BLOB"
+    #curl "$URL" -o "$OUTPUT_PATH/$BLOB"
 
     # Same as above, but using wget
     # wget "$URL" -O "$OUTPUT_PATH/$BLOB"
 
     # Same, + unpack files on the fly
-    # curl "$URL" | tar -C "$OUTPUT_PATH" -f - -x -j
+    curl "$URL" | tar --no-same-owner -C "$OUTPUT_PATH" -f - -x -z
 done

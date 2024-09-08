@@ -1,3 +1,7 @@
+# Dan edits
+
+See DAN.md
+
 # ICASSP 2023 Deep Noise Suppression Challenge
 Website: https://aka.ms/dns-challenge
 Git Repo: https://github.com/microsoft/DNS-Challenge
