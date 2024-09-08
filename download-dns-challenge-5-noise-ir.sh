@@ -31,7 +31,7 @@ AZURE_URL="https://dnschallengepublic.blob.core.windows.net/dns5archive/V5_train
 
 OUTPUT_PATH="./"
 
-mkdir -p $OUTPUT_PATH/{noise_fullband}
+mkdir -p $OUTPUT_PATH/noise_fullband
 
 for BLOB in ${BLOB_NAMES[@]}
 do
