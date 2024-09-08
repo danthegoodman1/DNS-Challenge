@@ -114,7 +114,7 @@ AZURE_URL="https://dnschallengepublic.blob.core.windows.net/dns5archive/V5_train
 OUTPUT_PATH="./datasets_fullband"
 
 # mkdir -p $OUTPUT_PATH/Track1_Headset
-mkdir -p $OUTPUT_PATH/{clean_fullband}
+mkdir -p $OUTPUT_PATH/clean_fullband
 
 for BLOB in ${BLOB_NAMES[@]}
 do
