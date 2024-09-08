@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-# A ton of these will fail because they are corrupt or missing
+# A ton of these will fail because they are corrupt or missing https://github.com/microsoft/DNS-Challenge/issues/151
 
 # ***** 5th DNS Challenge at ICASSP 2023*****
 # Track 1 Headset Clean speech: All Languages 
@@ -113,7 +113,8 @@ AZURE_URL="https://dnschallengepublic.blob.core.windows.net/dns5archive/V5_train
 
 OUTPUT_PATH="./datasets_fullband"
 
-mkdir -p $OUTPUT_PATH/Track1_Headset
+# mkdir -p $OUTPUT_PATH/Track1_Headset
+mkdir -p $OUTPUT_PATH/{clean_fullband}
 
 for BLOB in ${BLOB_NAMES[@]}
 do
