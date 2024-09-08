@@ -23,11 +23,13 @@ echo "Download: $URL"
 #
 # Actually download the archive - UNCOMMENT it when ready to download
 #do
-# wget "$URL"
+wget "$URL"
+unzip V5_dev_testset.zip
+rm V5_dev_testset.zip
 
 #done
 # curl "$URL" -o "$BLOB"
 # Same as above, but using wget
 #wget "$URL 
 # Same, + unpack files on the fly
-curl "$URL" | tar -f - -x -z
+# curl "$URL" | tar -f - -x -z
